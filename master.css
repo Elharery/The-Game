@@ -1,0 +1,579 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding: 0px;
+    margin: 0px;
+    user-select: none;
+}
+.container{
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+}
+.game-name{
+    width: 100%;
+    background-color: #07b6a8;
+    color: white;
+    font-size: 50px;
+    padding: 15px;
+}
+.kye-word{
+    font-size: 20px;
+    background-color: aqua;
+    color: #ba5b5b;
+    font-weight: bold;
+    font-family: fantasy;
+    letter-spacing: 4px;
+    word-spacing: 4px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px;
+}
+.kye-word .key-word-span{
+    color: deeppink;
+    font-family: system-ui;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+}
+.game-content{
+    width: 95%;
+    height: calc(100vh - 350px);
+    margin: 0 auto;
+    display: flex;
+}
+
+
+.alpha-letters.game-over {
+    pointer-events: none;
+}
+.drow{
+    flex: 1;
+    position: relative;
+}
+.drow .root{
+    position: absolute;
+    top: 392px;
+    left: 0px;
+    height: 15px;
+    width: 140px;
+    background-color: #b46b32;
+    display: none;
+}
+.drow .stand{
+    position: absolute;
+    height: 375px;
+    width: 25px;
+    background-color: #b46b32;
+    top: 17px;
+    left: 58px;
+    display: none;
+}
+.drow .stand::before{
+    position: absolute;
+    content: "";
+    width: 9px;
+    height: 375px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #f8984d;
+}
+.drow .hangle{
+    position: absolute;
+    height: 20px;
+    width: 135px;
+    top: 36px;
+    left: 83px;
+    background-color: #b46b32;
+    display: none;
+
+}
+.drow .hangle::before{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 135px;
+    height: 10px;
+    background-color: #f8984d;
+}
+.drow .hangle::after{
+    position: absolute;
+    content: "";
+    top: 17px;
+    left: 93px;
+    width: 15px;
+    height: 30px;
+    background-color: #b46b32;
+}
+.drow .rope{
+    position: absolute;
+    top: 75px;
+    left: 149px;
+    background: white;
+    height: 94px;
+    width: 70px;
+    border-radius: 50%;
+    border: 5px dashed #b46b32;
+    display: none;
+
+}
+.drow .man .head{
+    position: absolute;
+    height: 60px;
+    width: 50px;
+    border-radius: 50%;
+    border: 5px solid #222;
+    top: 102px;
+    left: 159px;
+    display: none;
+}
+.drow .man .head::before{
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 15px;
+    background-color: #222;
+    left: 57px;
+    transform: rotate(-45deg);
+}
+.drow .man .body{
+    position: absolute;
+    width: 7px;
+    height: 105px;
+    background-color: #222;
+    left: 180px;
+    top: 160px;
+    display: none;
+}
+.drow .man .arms{
+    position: absolute;
+    display: none;
+}
+.drow .man .arms::before{
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 5px;
+    background-color: #222;
+    transform: rotate(54deg);
+    left: 199px;
+    top: 160px;
+}
+.drow .man .arms::after{
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 5px;
+    background-color: #222;
+    transform: rotate(-54deg);
+    left: 163px;
+    top: 160px;
+}
+.drow .man .legs{
+    position: absolute;
+    left: -42px;
+    display: none;
+}
+.drow .man .legs::before{
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 5px;
+    background-color: #222;
+    transform: rotate(-54deg);
+    left: 241px;
+    top: 252px;
+}
+.drow .man .legs::after{
+    position: absolute;
+    content: "";
+    height: 50px;
+    width: 5px;
+    background-color: #222;
+    transform: rotate(54deg);
+    left: 204px;
+    top: 252px;
+}
+/* .............................................. */
+.drow.w-1 .root {
+    display: block;
+}
+.drow.w-1 .stand {
+    display: block;
+}
+.drow.w-1 .hangle {
+    display: block;
+}
+.drow.w-2 .rope {
+    display: block;
+}
+.drow.w-3 .head {
+    display: block;
+}
+.drow.w-3 .msg {
+    display: block;
+}
+.drow.w-4 .body {
+    display: block;
+}
+.drow.w-5 .arms {
+    display: block;
+}
+.drow.w-6 .legs {
+    display: block;
+}
+/* .............................................. */
+.msg{
+    position: absolute;
+    height: 110px;
+    width: 220px;
+    left: 213px;
+    top: 60px;
+    line-height: 25px;
+    color: #222;
+    text-align: center;
+    text-transform: capitalize;
+    max-width: 220px;
+    display: none;
+}
+.alpha-letters{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    max-width: 40%;
+    margin-right: 70px;
+}
+.alpha-letters span{
+    background-color: #07b6a8;
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: monospace;
+}
+.alpha-letters span.done{
+    opacity: 0.4555;
+    pointer-events: none;
+}
+@media (max-width: 992px) {
+    .alpha-letters{
+        margin: -20px;
+    }
+}
+.letters-guess{
+    height: 100px;
+    width: 85%;
+    margin: 15px auto;
+    line-height: 50px;
+    text-align: center;
+}
+.letters-guess span{
+    background-color: #f7f0f0;
+    padding: 10px 20px;
+    font-size: 35px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #07b6a8;
+    margin: 5px;
+    font-family: monospace;
+    color: #2c7d71;
+}
+.letters-guess .space{
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+}
+a{
+    text-decoration: none;
+    background-color: #0773b6;
+    color: white;
+    padding: 5px;
+    font-size: 17px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-family: monospace;
+    border-radius: 10px;
+}
+.play-again{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+    background-color: #56b42f;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: monospace;
+    display: none;
+}
+/* ........................................................... */
+@media (max-width: 768px) {
+    .container{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+    }
+    .game-name{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        padding: 0 0 15px;
+    }
+    .kye-word{
+        position: absolute;
+        top: 63px;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 160px;
+        padding: 0 0 5px;
+        border-radius: 6px;
+    }
+    .game-content{
+        max-width: 100%;
+    }
+    .drow{
+        position: relative;
+        top: 35px;
+        left: 30px;
+    }
+    .drow .root {
+        position: absolute;
+        top: 235px;
+        left: -5px;
+        height: 9px;
+        width: 74px;
+        background-color: #b46b32;
+        display: none;
+    }
+    .drow .stand {
+        position: absolute;
+        height: 151px;
+        width: 15px;
+        background-color: #b46b32;
+        top: 85px;
+        left: 22px;
+        display: none;
+    }
+    .drow .stand::before {
+    position: absolute;
+    content: "";
+    width: 7px;
+    height: 151px;
+    bottom: 0px;
+    left: 0px;
+    background-color: #f8984d;
+    }
+    .drow .hangle {
+        position: absolute;
+        height: 11px;
+        width: 50px;
+        top: 113px;
+        left: 36px;
+        background-color: #b46b32;
+        display: none;
+    }
+    .drow .hangle::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 50px;
+        height: 5px;
+        background-color: #f8984d;
+    }
+    .drow .hangle::after {
+        position: absolute;
+        content: "";
+        top: 11px;
+        left: 37px;
+        width: 7px;
+        height: 16px;
+        background-color: #b46b32;
+    }
+    .drow .rope {
+        position: absolute;
+        top: 138px;
+        left: 64px;
+        background: white;
+        height: 29px;
+        width: 25px;
+        border-radius: 50%;
+        border: 2px dashed #b46b32;
+    }
+    .drow .man .head {
+        position: absolute;
+        height: 23px;
+        width: 19px;
+        border-radius: 50%;
+        border: 2px solid #222;
+        top: 142px;
+        left: 67px;
+    }
+    .drow .man .head::before {
+        position: absolute;
+        content: "";
+        height: 1px;
+        width: 10px;
+        background-color: #222;
+        left: 22px;
+        top: 5px;
+        transform: rotate(335deg);
+    }
+    .drow .man .body {
+        position: absolute;
+        width: 3px;
+        height: 37px;
+        background-color: #222;
+        left: 75px;
+        top: 164px;
+    }
+    .drow .man .arms::before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 2px;
+        background-color: #222;
+        transform: rotate(54deg);
+        left: 84px;
+        top: 160px;
+    }
+    .drow .man .arms::after {
+        position: absolute;
+        content: "";
+        height: 19px;
+        width: 2px;
+        background-color: #222;
+        transform: rotate(-54deg);
+        left: 67px;
+        top: 160px;
+    }
+    .drow .man .legs::before {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 2px;
+        background-color: #222;
+        transform: rotate(-54deg);
+        left: 125px;
+        top: 196px;
+    }
+    .drow .man .legs::after {
+        position: absolute;
+        content: "";
+        height: 20px;
+        width: 2px;
+        background-color: #222;
+        transform: rotate(54deg);
+        left: 110px;
+        top: 196px;
+    }
+    .msg {
+        position: absolute;
+        height: 70px;
+        width: 187px;
+        left: 102px;
+        top: 120px;
+        line-height: 25px;
+        color: #222;
+        text-align: center;
+        text-transform: capitalize;
+        max-width: 220px;
+        display: none;
+        font-size: 15px;
+    }
+    .alpha-letters{
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 75%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        margin: 0;
+        max-width: 75%;
+    }
+    .alpha-letters span {
+        background-color: #07b6a8;
+        margin: 3px;
+        padding: 4px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 30px;
+        cursor: pointer;
+        font-family: monospace;
+    }
+    .letters-guess{
+        position: absolute;
+        top: 250px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: flex-end;
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .letters-guess span {
+        background-color: #f7f0f0;
+        padding: 0px 1px;
+        font-size: 24px;
+        text-transform: uppercase;
+        border-bottom: 2px solid #138d83;
+        margin: 3px;
+        font-family: monospace;
+        color: #2c7d71;
+        width: 13px;
+    }
+    .letters-guess .space {
+        padding: 3px 9px;
+        border: none;
+        background-color: white;
+    }
+    a{
+        text-decoration: none;
+        background-color: #0773b6;
+        color: white;
+        padding: 5px;
+        font-size: 13px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: bold;
+        font-family: monospace;
+        border-radius: 10px;
+    }
+    .play-again{
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 30px;
+        color: white;
+        background-color: #56b42f;
+        padding: 8px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: monospace;
+    }
+}

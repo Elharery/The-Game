@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="stylesheet" href="master.css">
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Arima:wght@600&family=Cairo:wght@700&family=Dancing+Script:wght@400;500;600;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@500&family=Splash&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="game-name">Hangman</div>
+        <div class="kye-word">Key Word : <span class="key-word-span"></span></div>
+        <div class="game-content">
+            <div class="drow">
+                <div class="root"></div>
+                <div class="stand"></div>
+                <div class="hangle"></div>
+                <div class="rope"></div>
+                <div class="msg"><span class="choosen-msg"></span></div>
+                <div class="man">
+                    <div class="head"></div>
+                    <div class="body"></div>
+                    <div class="arms"></div>
+                    <div class="legs"></div>
+                </div>
+            </div>
+            <div class="alpha-letters"></div>
+        </div>
+        <div class="letters-guess"></div>
+        <a href="https://www.facebook.com/profile.php?id=100053887152188" target="_blank">My Facebook Account</a>
+        <p class="play-again">play Again</p>
+        <audio id="game-over" preload="auto" src="../zaudio/sad-trombone-gaming-sound-effect-(hd)-By-Tuna.mp3"></audio>
+        <audio id="wrong" preload="auto" src="../zaudio/wrong.mp3"></audio>
+        <audio preload="auto" id="correct" src="../zaudio/correct.wav"></audio>
+        <audio preload="auto" id="win" src="../zaudio/minion_laugh.mp3"></audio>
+        <script src="main.js"></script>
+</body>
+
+</html>
